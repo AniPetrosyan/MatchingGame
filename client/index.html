@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>A Multiplayer Game</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <div class="matchingGame">
+      <header>
+        <div id="playerOnePoints" class="points">0pts</div>
+        <h2 id="gameHeader">Matching Game</h2>
+        <div id="playerTwoPoints" class="points">0pts</div>
+      </header>
+      <table id="gameBoard" style="width:100%">
+        <tr>
+          <td id="card0"></td>
+          <td id="card1"></td>
+          <td id="card2"></td>
+          <td id="card3"></td>
+        </tr>
+        <tr>
+          <td id="card4"></td>
+          <td id="card5"></td>
+          <td id="card6"></td>
+          <td id="card7"></td>
+        </tr>
+        <tr>
+          <td id="card8"></td>
+          <td id="card9"></td>
+          <td id="card10"></td>
+          <td id="card11"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="winner"></div>
+    <div id="createGame" class="createGame">
+      <div class="createGameInputs">
+        <label>Game Name:</label>
+        <input type="text" id="gameName" name="gameName" />
+      </div>
+      <div class="createGameInputs">
+        <label>User Name:</label>
+        <input type="text" id="userName" name="userName" />
+      </div>
+      <p id="waiting" class="waiting">Waiting for another player to join...</p>
+      <button id="startGame" onclick="createOrJoinGame()">Start Game</button>
+      <button id="test" onclick="test()">Test</button>
+    </div>
+    <div id="chatBox" class="chatArea">
+      <div id="receivedMessages"></div>
+      <textarea id="chatMessage"></textarea>
+      <button id="submitChat" onclick="sendMessage()">Send Message!</button>
+    </div>
+  </body>
+  <script src="/client.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="/style.css" />
+</html>
